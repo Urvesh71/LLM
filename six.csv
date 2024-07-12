@@ -1,0 +1,12 @@
+Table,Cycle,Start Date,Segment number,Segment Name,Item of Segment,Sender Rule,Receiver Rule,Lock indicator,Scale Neg. Tracing Factors,Set ID,Set ID.1,Set ID.2,Set ID.3,Share in %,Fixed Amount,Fixed Amount.1,Fixed Amount.2,Fixed Amount.3,Fixed Amount.4,Fixed Amount.5,Fixed Amount.6,Fixed Amount.7,Fixed Amount.8,Fixed Amount.9,Currency,Fixed Amount.10,Fixed Amount.11,Fixed Amount.12,Fixed Amount.13,Fixed Amount.14,Fixed Amount.15,Fixed Amount.16,Fixed Amount.17,Fixed Amount.18,Fixed Amount.19,Origin Plan/Actual,Data Field Definition,Assessment CElem,ValFld fix.CCtrcosts,Val. fld vbl costs,Acct Assignment Fld,Sort Field,Excl. Sender as Receiver,MRULE,Allocation Structure,PA transfer struct.,Sdr Factor Per,Receiver Factor Per
+CE7A000,A000YA1010,1/1/2014,1,YA1010-1,10,1,3,,3,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94221000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,2,YA1010-2,20,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94222000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,3,YA1010-3,30,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94223000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,4,YA1010-4,40,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94224000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,5,YA1010-5,50,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94225000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,6,YA1010-6,60,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94224000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,7,YA1010-7,70,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94221000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,8,YA1010-8,80,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94226000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,9,YA1010-9,90,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94227000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,10,YA1010-10,100,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94228000,,,,,,,,,0,100
+CE7A000,A000YA1010,1/1/2014,11,YA1010-11,110,1,3,,4,,,,,100.0,,,,,,,,,,,,BUKRS,,,,,,,,,,,,94229000,,,,,,,,,0,100
