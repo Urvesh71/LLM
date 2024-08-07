@@ -1,154 +1,506 @@
-{
-  "cycle": [
-    {
-      "cycle_header": {
-        "controlling_area": "A000",
-        "cycle": "61IX_N",
-        "sdate": "01.01.2024",
-        "text": "IST23-Umlage 2 VES-AG"
-      },
-      "segments": [
-        {
-          "id":1,
-          "segement_header": {
-            "segment_name": "61IX_2_030",
-            "segment_text": "Uml 61736807-61998016",
-            "CostElement": "94202000"
-          },
-          "players": [
-            {
-              "player": "cost_center",
-              "player_type": "sender",
-              "from": "1000",
-              "to": "2000",
-              "group": ""
-            },
-            {
-              "player": "order",
-              "player_type": "receiver",
-              "from": "",
-              "to": "",
-              "group": "61_UML_1"
-            },
-            {
-              "player": "cost_center",
-              "player_type": "receiver",
-              "from": "",
-              "to": "",
-              "group": "61_UML_1"
-            }
-          ],
-
-          "senders_values": {
-            "sender_rule":"fixed amounts",
-            "share_in%":"2,00%",
-            "value_origin":"actual",
-            "activities": {
-              "from": "",
-              "to": "",
-              "group": ""
-            }
-          },
-          "receivers_values": {
-            "receiver_rule":"fixed amounts",
-            "var-portion_type": "",
-            "tracing_factors": ""           
-          }
+[
+  {
+    "tab": "CCSS",
+    "cycle": "A00061IX_N",
+    "sdate": "01.01.2024",
+    "Text": "IST23-Umlage 2 VES-AG",
+    "Segments": [
+      {
+        "Seqnr": 1,
+        "SegmentHeader": {
+          "Name": "61IX_2_030",
+          "Text": "Uml 61736807-61998016",
+          "CostElement": "94202000"
         },
-        {
-          "id":2,
-          "segement_header": {
-            "segment_name": "61IX_2_031",
-            "segment_text": "Uml 61936014",
-            "CostElement": "94202000"
+        "Players": [
+          {
+            "Player": "Cost Center",
+            "PlayerType": "sender",
+            "Valmin": "1000",
+            "Valmax": "2000",
+            "SetId": ""
           },
-          "players": [
-            {
-              "player": "cost_center",
-              "player_type": "sender",
-              "from": "1000",
-              "to": "2000",
-              "group": ""
-            },
-            {
-              "player": "order",
-              "player_type": "receiver",
-              "from": "",
-              "to": "",
-              "group": "61_UML_VST"
-            },
-            {
-              "player": "cost_center",
-              "player_type": "receiver",
-              "from": "",
-              "to": "",
-              "group": "61_UML_1"
-            }
-          ],
-          "senders_values": {
-            "sender_rule":"posted amounts",
-            "share_in%":"2,00%",
-            "value_origin":"actual",
-            "activities": {
-              "from": "",
-              "to": "",
-              "group": ""
-            }
+          {
+            "Player": "order",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "61_UML_1"
           },
-          "receivers_values": {
-            "receiver_rule":"fixed percentages",
-            "var-portion_type": "",
-            "tracing_factors": ""           
+          {
+            "Player": "Cost Center",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "61_UML_1"
           }
+        ],
+        "SenderValues": {
+          "SenderRule": "fixed amounts",
+          "ShareIn": "2,00%",
+          "ValueOrigin": "actual",
+          "Activities": [
+            {
+              "ID": "001",
+              "Name": "Market Research",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Research & Development",
+              "CostCenterType": "Administrative"
+            },
+            {
+              "ID": "002",
+              "Name": "Product Development",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Research & Development",
+              "CostCenterType": "Production"
+            }
+          ]
         },
-        {
-          "id":3,
-          "segement_header": {
-            "segment_name": "61IX_2_032",
-            "segment_text": "Umlage KST SIM",
-            "CostElement": "94202000"
-          },
-          "players": [
-            {
-              "player": "cost_center",
-              "player_type": "sender",
-              "from": "",
-              "to": "",
-              "group": "61_SIM_UML"
-            },
-            {
-              "player": "order",
-              "player_type": "receiver",
-              "from": "",
-              "to": "",
-              "group": "61_UML_VST"
-            },
-            {
-              "player": "cost_center",
-              "player_type": "receiver",
-              "from": "10101101",
-              "to": "10101301",
-              "group": ""
-            }
-          ],
-
-          "senders_values": {
-            "sender_rule":"posted amounts",
-            "share_in%":"20,70%",
-            "value_origin":"actual",
-            "activities": {
-              "from": "",
-              "to": "",
-              "group": ""
-            }
-          },
-          "receivers_values": {
-            "receiver_rule":"fixed percentages",
-            "var-portion_type": "",
-            "tracing_factors": ""           
-          }
+        "ReceiverValues": {
+          "ReceiverRule": "fixed amounts",
+          "VarPortionType": "",
+          "TracingFactors": ""
         }
-      ]
-    }
-  ]
-}
+      },
+      {
+        "Seqnr": 2,
+        "SegmentHeader": {
+          "Name": "61IX_2_031",
+          "Text": "Uml 61936014",
+          "CostElement": "94202001"
+        },
+        "Players": [
+          {
+            "Player": "Cost Center",
+            "PlayerType": "sender",
+            "Valmin": "2000",
+            "Valmax": "3000",
+            "SetId": ""
+          },
+          {
+            "Player": "order",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "61_UML_2"
+          },
+          {
+            "Player": "Cost Center",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "61_UML_2"
+          }
+        ],
+        "SenderValues": {
+          "SenderRule": "fixed amounts",
+          "ShareIn": "3,00%",
+          "ValueOrigin": "actual",
+          "Activities": [
+            {
+              "ID": "001",
+              "Name": "Sales and Marketing",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Sales & Marketing",
+              "CostCenterType": "Administrative"
+            },
+            {
+              "ID": "002",
+              "Name": "Customer Support",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Customer Service",
+              "CostCenterType": "Administrative"
+            }
+          ]
+        },
+        "ReceiverValues": {
+          "ReceiverRule": "fixed amounts",
+          "VarPortionType": "",
+          "TracingFactors": ""
+        }
+      }
+    ]
+  },
+  {
+    "tab": "CCSS",
+    "cycle": "A00062IX_N",
+    "sdate": "01.01.2024",
+    "Text": "IST23-Umlage 3 VES-AG",
+    "Segments": [
+      {
+        "Seqnr": 1,
+        "SegmentHeader": {
+          "Name": "62IX_2_030",
+          "Text": "Uml 62736807-62998016",
+          "CostElement": "94202002"
+        },
+        "Players": [
+          {
+            "Player": "Cost Center",
+            "PlayerType": "sender",
+            "Valmin": "3000",
+            "Valmax": "4000",
+            "SetId": ""
+          },
+          {
+            "Player": "order",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "62_UML_1"
+          },
+          {
+            "Player": "Cost Center",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "62_UML_1"
+          }
+        ],
+        "SenderValues": {
+          "SenderRule": "fixed amounts",
+          "ShareIn": "4,00%",
+          "ValueOrigin": "actual",
+          "Activities": [
+            {
+              "ID": "001",
+              "Name": "Supply Chain Management",
+              "Category": "Primary",
+              "UnitOfMeasure": "Units",
+              "CostElementGroup": "Operations",
+              "CostCenterType": "Production"
+            },
+            {
+              "ID": "002",
+              "Name": "Human Resources Planning",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Human Resources",
+              "CostCenterType": "Administrative"
+            }
+          ]
+        },
+        "ReceiverValues": {
+          "ReceiverRule": "fixed amounts",
+          "VarPortionType": "",
+          "TracingFactors": ""
+        }
+      },
+      {
+        "Seqnr": 2,
+        "SegmentHeader": {
+          "Name": "62IX_2_031",
+          "Text": "Uml 62936014",
+          "CostElement": "94202003"
+        },
+        "Players": [
+          {
+            "Player": "Cost Center",
+            "PlayerType": "sender",
+            "Valmin": "4000",
+            "Valmax": "5000",
+            "SetId": ""
+          },
+          {
+            "Player": "order",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "62_UML_2"
+          },
+          {
+            "Player": "Cost Center",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "62_UML_2"
+          }
+        ],
+        "SenderValues": {
+          "SenderRule": "fixed amounts",
+          "ShareIn": "5,00%",
+          "ValueOrigin": "actual",
+          "Activities": [
+            {
+              "ID": "001",
+              "Name": "IT Infrastructure Maintenance",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Information Technology",
+              "CostCenterType": "Administrative"
+            },
+            {
+              "ID": "002",
+              "Name": "Financial Planning",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Finance",
+              "CostCenterType": "Administrative"
+            }
+          ]
+        },
+        "ReceiverValues": {
+          "ReceiverRule": "fixed amounts",
+          "VarPortionType": "",
+          "TracingFactors": ""
+        }
+      }
+    ]
+  },
+  {
+    "tab": "CCSS",
+    "cycle": "A00063IX_N",
+    "sdate": "01.01.2024",
+    "Text": "IST23-Umlage 4 VES-AG",
+    "Segments": [
+      {
+        "Seqnr": 1,
+        "SegmentHeader": {
+          "Name": "63IX_2_030",
+          "Text": "Uml 63736807-63998016",
+          "CostElement": "94202004"
+        },
+        "Players": [
+          {
+            "Player": "Cost Center",
+            "PlayerType": "sender",
+            "Valmin": "5000",
+            "Valmax": "6000",
+            "SetId": ""
+          },
+          {
+            "Player": "order",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "63_UML_1"
+          },
+          {
+            "Player": "Cost Center",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "63_UML_1"
+          }
+        ],
+        "SenderValues": {
+          "SenderRule": "fixed amounts",
+          "ShareIn": "6,00%",
+          "ValueOrigin": "actual",
+          "Activities": [
+            {
+              "ID": "001",
+              "Name": "Quality Assurance",
+              "Category": "Primary",
+              "UnitOfMeasure": "Units",
+              "CostElementGroup": "Quality Control",
+              "CostCenterType": "Production"
+            },
+            {
+              "ID": "002",
+              "Name": "Strategic Planning",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Strategic Management",
+              "CostCenterType": "Administrative"
+            }
+          ]
+        },
+        "ReceiverValues": {
+          "ReceiverRule": "fixed amounts",
+          "VarPortionType": "",
+          "TracingFactors": ""
+        }
+      },
+      {
+        "Seqnr": 2,
+        "SegmentHeader": {
+          "Name": "63IX_2_031",
+          "Text": "Uml 63936014",
+          "CostElement": "94202005"
+        },
+        "Players": [
+          {
+            "Player": "Cost Center",
+            "PlayerType": "sender",
+            "Valmin": "6000",
+            "Valmax": "7000",
+            "SetId": ""
+          },
+          {
+            "Player": "order",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "63_UML_2"
+          },
+          {
+            "Player": "Cost Center",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "63_UML_2"
+          }
+        ],
+        "SenderValues": {
+          "SenderRule": "fixed amounts",
+          "ShareIn": "7,00%",
+          "ValueOrigin": "actual",
+          "Activities": [
+            {
+              "ID": "001",
+              "Name": "Sales and Marketing",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Sales & Marketing",
+              "CostCenterType": "Administrative"
+            },
+            {
+              "ID": "002",
+              "Name": "Customer Support",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Customer Service",
+              "CostCenterType": "Administrative"
+            }
+          ]
+        },
+        "ReceiverValues": {
+          "ReceiverRule": "fixed amounts",
+          "VarPortionType": "",
+          "TracingFactors": ""
+        }
+      }
+    ]
+  },
+  {
+    "tab": "CCSS",
+    "cycle": "A00064IX_N",
+    "sdate": "01.01.2024",
+    "Text": "IST23-Umlage 5 VES-AG",
+    "Segments": [
+      {
+        "Seqnr": 1,
+        "SegmentHeader": {
+          "Name": "64IX_2_030",
+          "Text": "Uml 64736807-64998016",
+          "CostElement": "94202006"
+        },
+        "Players": [
+          {
+            "Player": "Cost Center",
+            "PlayerType": "sender",
+            "Valmin": "7000",
+            "Valmax": "8000",
+            "SetId": ""
+          },
+          {
+            "Player": "order",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "64_UML_1"
+          },
+          {
+            "Player": "Cost Center",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "64_UML_1"
+          }
+        ],
+        "SenderValues": {
+          "SenderRule": "fixed amounts",
+          "ShareIn": "8,00%",
+          "ValueOrigin": "actual",
+          "Activities": [
+            {
+              "ID": "001",
+              "Name": "Financial Planning",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Finance",
+              "CostCenterType": "Administrative"
+            },
+            {
+              "ID": "002",
+              "Name": "Quality Assurance",
+              "Category": "Primary",
+              "UnitOfMeasure": "Units",
+              "CostElementGroup": "Quality Control",
+              "CostCenterType": "Production"
+            }
+          ]
+        },
+        "ReceiverValues": {
+          "ReceiverRule": "fixed amounts",
+          "VarPortionType": "",
+          "TracingFactors": ""
+        }
+      },
+      {
+        "Seqnr": 2,
+        "SegmentHeader": {
+          "Name": "64IX_2_031",
+          "Text": "Uml 64936014",
+          "CostElement": "94202007"
+        },
+        "Players": [
+          {
+            "Player": "Cost Center",
+            "PlayerType": "sender",
+            "Valmin": "8000",
+            "Valmax": "9000",
+            "SetId": ""
+          },
+          {
+            "Player": "order",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "64_UML_2"
+          },
+          {
+            "Player": "Cost Center",
+            "PlayerType": "receiver",
+            "Valmin": "",
+            "Valmax": "",
+            "SetId": "64_UML_2"
+          }
+        ],
+        "SenderValues": {
+          "SenderRule": "fixed amounts",
+          "ShareIn": "9,00%",
+          "ValueOrigin": "actual",
+          "Activities": [
+            {
+              "ID": "001",
+              "Name": "IT Infrastructure Maintenance",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Information Technology",
+              "CostCenterType": "Administrative"
+            },
+            {
+              "ID": "002",
+              "Name": "Strategic Planning",
+              "Category": "Primary",
+              "UnitOfMeasure": "Hours",
+              "CostElementGroup": "Strategic Management",
+              "CostCenterType": "Administrative"
+            }
+          ]
+        },
+        "ReceiverValues": {
+          "ReceiverRule": "fixed amounts",
+          "VarPortionType": "",
+          "TracingFactors": ""
+        }
+      }
+    ]
+  }
+]
