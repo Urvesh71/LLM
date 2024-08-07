@@ -1,0 +1,154 @@
+{
+  "cycle": [
+    {
+      "cycle_header": {
+        "controlling_area": "A000",
+        "cycle": "61IX_N",
+        "sdate": "01.01.2024",
+        "text": "IST23-Umlage 2 VES-AG"
+      },
+      "segments": [
+        {
+          "id":1,
+          "segement_header": {
+            "segment_name": "61IX_2_030",
+            "segment_text": "Uml 61736807-61998016",
+            "CostElement": "94202000"
+          },
+          "players": [
+            {
+              "player": "cost_center",
+              "player_type": "sender",
+              "from": "1000",
+              "to": "2000",
+              "group": ""
+            },
+            {
+              "player": "order",
+              "player_type": "receiver",
+              "from": "",
+              "to": "",
+              "group": "61_UML_1"
+            },
+            {
+              "player": "cost_center",
+              "player_type": "receiver",
+              "from": "",
+              "to": "",
+              "group": "61_UML_1"
+            }
+          ],
+
+          "senders_values": {
+            "sender_rule":"fixed amounts",
+            "share_in%":"2,00%",
+            "value_origin":"actual",
+            "activities": {
+              "from": "",
+              "to": "",
+              "group": ""
+            }
+          },
+          "receivers_values": {
+            "receiver_rule":"fixed amounts",
+            "var-portion_type": "",
+            "tracing_factors": ""           
+          }
+        },
+        {
+          "id":2,
+          "segement_header": {
+            "segment_name": "61IX_2_031",
+            "segment_text": "Uml 61936014",
+            "CostElement": "94202000"
+          },
+          "players": [
+            {
+              "player": "cost_center",
+              "player_type": "sender",
+              "from": "1000",
+              "to": "2000",
+              "group": ""
+            },
+            {
+              "player": "order",
+              "player_type": "receiver",
+              "from": "",
+              "to": "",
+              "group": "61_UML_VST"
+            },
+            {
+              "player": "cost_center",
+              "player_type": "receiver",
+              "from": "",
+              "to": "",
+              "group": "61_UML_1"
+            }
+          ],
+          "senders_values": {
+            "sender_rule":"posted amounts",
+            "share_in%":"2,00%",
+            "value_origin":"actual",
+            "activities": {
+              "from": "",
+              "to": "",
+              "group": ""
+            }
+          },
+          "receivers_values": {
+            "receiver_rule":"fixed percentages",
+            "var-portion_type": "",
+            "tracing_factors": ""           
+          }
+        },
+        {
+          "id":3,
+          "segement_header": {
+            "segment_name": "61IX_2_032",
+            "segment_text": "Umlage KST SIM",
+            "CostElement": "94202000"
+          },
+          "players": [
+            {
+              "player": "cost_center",
+              "player_type": "sender",
+              "from": "",
+              "to": "",
+              "group": "61_SIM_UML"
+            },
+            {
+              "player": "order",
+              "player_type": "receiver",
+              "from": "",
+              "to": "",
+              "group": "61_UML_VST"
+            },
+            {
+              "player": "cost_center",
+              "player_type": "receiver",
+              "from": "10101101",
+              "to": "10101301",
+              "group": ""
+            }
+          ],
+
+          "senders_values": {
+            "sender_rule":"posted amounts",
+            "share_in%":"20,70%",
+            "value_origin":"actual",
+            "activities": {
+              "from": "",
+              "to": "",
+              "group": ""
+            }
+          },
+          "receivers_values": {
+            "receiver_rule":"fixed percentages",
+            "var-portion_type": "",
+            "tracing_factors": ""           
+          }
+        }
+      ]
+    }
+  ]
+}
