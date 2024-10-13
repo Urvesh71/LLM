@@ -1,61 +1,55 @@
-version: '3.8'
-
 services:
-  # ollama:
-  #   # image: ollama/ollama:latest  # Use the official Ollama image
-  #   image: ollama/ollama  # Use the official Ollama image
-  #   container_name: ollama
-  #   ports:
-  #     - "11434:11434"
-  #   command: >
-  #     ollama pull nomic-embed-text:latest &&
-  #     ollama pull mistral:latest &&
-  #     ollama serve
-  #   # command: serve  # Simplify the command to just serve models available
-  #   environment:
-  #     - MODELS=nomic-embed-text:latest,mistral:latest
-  # ---------------------------Version 2-------------------------- >>> This version works well
 
-  # ollama:
-  #   image: ollama/ollama:latest
-  #   ports:
-  #     - 11434:11434
-  #   volumes:
-  #     - .:/code
-  #     - ./ollama/ollama:/root/.ollama
-  #   container_name: ollama
-  #   pull_policy: always
-  #   tty: true
-  #   restart: always
-  #   environment:
-  #     - OLLAMA_KEEP_ALIVE=24h
-  #     - OLLAMA_HOST=0.0.0.0
-  #   command: -c "ollama pull nomic-embed-text:latest && ollama pull mistral:latest && ollama serve"
-  # ---------------------------Version 2--------------------------
+  webui:
+    image: ghcr.io/open-webui/open-webui:main
+    ports:
+      - 3000:8080
+    # environment:
+    #   - OLLAMA_BASE_URL=http://ollama:11434
+    #   - SEARXNG_URL=http://searxng:8080
+    #   - SEARXNG_QUERY_URL= "http://searxng:8080/search?q=<query>"
+    
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+      SEARXNG_URL: http://searxng:8088
+      ENABLE_RAG_WEB_SEARCH: True
+      RAG_WEB_SEARCH_ENGINE: "searxng"
+      RAG_WEB_SEARCH_RESULT_COUNT: 4
+      RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 12
+      # SEARXNG_QUERY_URL: "http://searxng:8088/search?q=<query>"
+      SEARXNG_QUERY_URL: http://searxng.local/search?q=<query>
 
-  # ---------------------------Version 3--------------------------
+    volumes:
+      - open-webui:/app/backend/data
+    depends_on:
+     - ollama
+     - searxng
+    restart: always
+    
 
   ollama:
     image: ollama/ollama:latest
     ports:
-      - 11434:11434
+     - 11434:11434
+    healthcheck:
+      test: ollama --version || exit 1
+    command: serve
     volumes:
-      - .:/code
-      - ./ollama/ollama:/root/.ollama
-    container_name: ollama
-    entrypoint: ["/code/ollama-entrypoint.sh"]  # Use the script as the entrypoint
-    tty: true
+      - ollama:/root/.ollama
+      - ./start_ollama.sh:/start_ollama.sh
     restart: always
-    environment:
-      - OLLAMA_KEEP_ALIVE=24h
-      - OLLAMA_HOST=0.0.0.0
-  # ---------------------------Version 3--------------------------
-  chatbot:
-    build: .
-    container_name: chatbot
-    environment:
-      BASE_URL: http://host.docker.internal:11434
+    entrypoint: [ "/usr/bin/bash", "/start_ollama.sh" ]
+
+  searxng:
+    image: searxng/searxng:latest
     ports:
-      - "8501:8501"
-    depends_on:
-      - ollama
+      - "8088:8080"
+    environment:
+      - BASE_URL=http://searxng:8088/
+    volumes:
+      - ./searxng_settings.yml:/etc/searxng/settings.yml
+    restart: always
+
+volumes:
+  open-webui:
+  ollama:
