@@ -1,19 +1,15 @@
+# see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
+use_default_settings: true
+
 server:
-  secret_key: '319677123456789'  # Replace with a strong, random string
-  base_url: "http://searxng:8088/"
-  enable_http_api: True
-  bind_address: "0.0.0.0"
+  secret_key: "f9e603d4191caab069b021fa0568391a33c8a837b470892c64461b5dd12464f4"
+  limiter: false
+  image_proxy: true
   port: 8088
-  # Uncomment the following line if CSRF protection is causing issues
-  # csrf: False
-  # allowed_hosts:
-  #   - '*'
+  bind_address: "0.0.0.0"
 
 ui:
-  theme: oscar
-
-general:
-  public: True  # Allows access without authentication
+  static_use_hash: true
 
 search:
   safe_search: 0

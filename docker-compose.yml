@@ -4,52 +4,39 @@ services:
     image: ghcr.io/open-webui/open-webui:main
     ports:
       - 3000:8080
-    # environment:
-    #   - OLLAMA_BASE_URL=http://ollama:11434
-    #   - SEARXNG_URL=http://searxng:8080
-    #   - SEARXNG_QUERY_URL= "http://searxng:8080/search?q=<query>"
-    
+
     environment:
-      OLLAMA_BASE_URL: http://ollama:11434
-      SEARXNG_URL: http://searxng:8088
+      SEARXNG_URL: http://searxng:8080
       ENABLE_RAG_WEB_SEARCH: True
       RAG_WEB_SEARCH_ENGINE: "searxng"
       RAG_WEB_SEARCH_RESULT_COUNT: 4
       RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 12
-      # SEARXNG_QUERY_URL: "http://searxng:8088/search?q=<query>"
-      SEARXNG_QUERY_URL: http://searxng.local/search?q=<query>
+      SEARXNG_QUERY_URL: "http://searxng:8080/search?q=<query>"
+      # SEARXNG_QUERY_URL: http://searxng.local/search?q=<query>
 
     volumes:
       - open-webui:/app/backend/data
     depends_on:
-     - ollama
      - searxng
     restart: always
-    
-
-  ollama:
-    image: ollama/ollama:latest
-    ports:
-     - 11434:11434
-    healthcheck:
-      test: ollama --version || exit 1
-    command: serve
-    volumes:
-      - ollama:/root/.ollama
-      - ./start_ollama.sh:/start_ollama.sh
-    restart: always
-    entrypoint: [ "/usr/bin/bash", "/start_ollama.sh" ]
+    networks:
+      - web
 
   searxng:
     image: searxng/searxng:latest
     ports:
-      - "8088:8080"
-    environment:
-      - BASE_URL=http://searxng:8088/
+      - '8080:8080'
+    networks:
+      - web
     volumes:
-      - ./searxng_settings.yml:/etc/searxng/settings.yml
+      - searxng:/etc/searxng
+    # environment:
+    #   - 'INSTANCE_NAME=searxng-in'
     restart: always
 
 volumes:
-  open-webui:
-  ollama:
+  open-webui: {}
+  searxng: {}
+
+networks:
+  web:
