@@ -8,3 +8,4 @@ langchain-community
 langchain_text_splitters
 unstructured
 unstructured[all-docs]
+starlette>=0.49.1 # not directly required, pinned by Snyk to avoid a vulnerability
